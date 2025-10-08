@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure Bloom Beauty | Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/a2e0e9d6a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+            <div class="container nav-container">
+                <h1 class="logo">Nature’s Veil</h1>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="">My Account</a>
+                    <a href="cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+  <!-- Shop Section -->
+  <section class="shop-page">
+    <div class="container shop-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <ul>
+          <li data-category="all" class="active">All</li>
+          <li data-category="skincare">Skincare</li>
+          <li data-category="makeup">Makeup</li>
+          <li data-category="hair">Hair</li>
+        </ul>
+      </aside>
+
+      <!-- Products -->
+      <div class="product-grid">
+        <div class="product-card" data-category="skincare">
+          <a href="product.html?product=serum">
+            <img src="images/products/serum.jpg" alt="Hydrating Glow Serum">
+            <h3>Hydrating Glow Serum</h3>
+          </a>
+          <p>R299.00</p>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="makeup">
+          <a href="product.html?product=lipstick">
+            <img src="images/products/lipstick.jpg" alt="Velvet Matte Lipstick">
+            <h3>Velvet Matte Lipstick</h3>
+          </a>
+          <p>R199.00</p>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+
+        <div class="product-card" data-category="hair">
+          <a href="product.html?product=shampoo">
+            <img src="images/products/shampoo.jpg" alt="Nourishing Shampoo">
+            <h3>Nourishing Shampoo</h3>
+          </a>
+          <p>R149.00</p>
+          <button class="btn-add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+        <section class="footer-container">
+            <div class="footer-box border">
+                <h3>Information</h3>
+                <a href="">Shipping</a><br>
+                <a href="">The Consumer Protection Act</a><br>
+                <a href="">T & C</a><br>
+                <a href="">Contact Us</a>
+            </div>
+            <div class="footer-box border">
+                <h3>Customer Service</h3>
+                <a href="">Search</a><br>
+                <a href="">Recently viewed</a>
+            </div>
+            <div class="footer-box">
+                <h3>My Account</h3>
+                <a href="">My Account</a><br>
+                <a href="">Orders</a><br>
+                <a href="">Addresses</a><br>
+                <a href="">Shopping cart</a><br>
+                <a href="">Wishlist</a>
+            </div>
+        </section>
+        <section class="footer-end">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <p>Copyright &copy; 2025 Nature’s Veil. All rights reserved.</p>
+        </section>    
+    </footer>
+
+  <!-- JS at the end of body -->
+  <script src="js/shop.js"></script>
+</body>
+</html>
