@@ -130,10 +130,16 @@ nav a:hover {
 .product-card img {
   width: 100%;
   border-radius: 10px;
+  height: 180px;
+}
+
+.product-card a{
+  color: #222;
+  text-decoration: none;
 }
 
 .btn-add {
-  background: #c47ea0;
+  background: #759b35;
   color: white;
   border: none;
   padding: 0.6rem 1rem;
@@ -143,12 +149,12 @@ nav a:hover {
 }
 
 .btn-add:hover {
-  background: #b46b8f;
+  background: #3c742e;
 }
 
 footer {
     padding: 30px 20px;
-    background: gray;
+    background: #3c742e;
 }
 
 .footer-container {
@@ -203,16 +209,11 @@ footer {
 
 .sidebar {
   flex: 1;
-  min-width: 180px;
+  min-width: 150px;
   border: 1px solid #eee;
   border-radius: 12px;
   padding: 1rem;
   height: fit-content;
-}
-
-.sidebar h3 {
-  margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
 }
 
 .sidebar ul {
@@ -228,7 +229,7 @@ footer {
 
 .sidebar ul li:hover,
 .sidebar ul li.active {
-  color: #c47ea0;
+  color: #759b35;
 }
 
 /* Dropdown styles */
@@ -521,19 +522,8 @@ footer {
   background: #a83224;
 }
 
-.wishlist-icon {
-  color: #ccc;
-  cursor: pointer;
-  float: right;
-  margin-top: -10px;
-}
-
-.wishlist-icon.active {
-  color: #e74c3c;
-}
-
 .cart-count {
-  background: #ff4d4d;
+  background: #759b35;
   color: #fff;
   font-size: 0.7rem;
   border-radius: 50%;
