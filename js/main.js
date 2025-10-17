@@ -17,6 +17,46 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", renderWishlist);
+window.addEventListener("wishlistUpdated", renderWishlist);
+
+function renderWishlist() {
+  const wishlistContainer = document.getElementById("wishlistContainer");
+  if (!wishlistContainer) return;
+
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  if (wishlist.length === 0) {
+    wishlistContainer.innerHTML = "<p>Your wishlist is empty.</p>";
+    return;
+  }
+
+  wishlistContainer.innerHTML = wishlist.map(item => `
+    <div class="wishlist-item">
+      <img src="${item.image}" alt="${item.name}">
+      <div class="wishlist-info">
+        <h4>${item.name}</h4>
+        <p>${item.price}</p>
+        <button class="remove-wishlist" data-id="${item.id}">Remove</button>
+      </div>
+    </div>
+  `).join("");
+
+  document.querySelectorAll(".remove-wishlist").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.id;
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      wishlist = wishlist.filter(item => item.id !== id);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+      // Notify all pages
+      window.dispatchEvent(new Event("wishlistUpdated"));
+    });
+  });
+}
+
+
+
 function updateCartCount() {
   const count = JSON.parse(localStorage.getItem('cart') || '[]').length;
   const badge = document.getElementById('cartCount');
@@ -28,3 +68,5 @@ updateCartCount();
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
 toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+

@@ -533,3 +533,38 @@ footer {
   top: -10px;
   left: -5px;
 }
+
+.wishlist-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.wishlist-item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.wishlist-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.remove-wishlist {
+  background: #e57373;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.remove-wishlist:hover {
+  background: #c0392b;
+}

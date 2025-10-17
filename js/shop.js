@@ -108,27 +108,49 @@ document.querySelectorAll('.product-card a').forEach(link => {
 });
 
 // Wishlist logic
-document.querySelectorAll('.wishlist-icon').forEach(icon => {
-  icon.addEventListener('click', () => {
-    const productName = icon.parentElement.querySelector('h3').textContent;
-    let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+document.addEventListener("DOMContentLoaded", () => {
+  const wishlistIcons = document.querySelectorAll(".wishlist-icon");
 
-    if (wishlist.includes(productName)) {
-      wishlist = wishlist.filter(p => p !== productName);
-      icon.classList.remove('active');
-    } else {
-      wishlist.push(productName);
-      icon.classList.add('active');
+  // Load current wishlist from localStorage
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  wishlistIcons.forEach(icon => {
+    const card = icon.closest(".product-card");
+    const productId = card.dataset.id;
+
+    // Highlight hearts that are already in wishlist
+    if (wishlist.some(item => item.id === productId)) {
+      icon.classList.add("active");
     }
 
-    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    // Toggle on click
+    icon.addEventListener("click", () => {
+      const productName = card.querySelector("h3").textContent;
+      const productPrice = card.querySelector("p").textContent;
+      const productImage = card.querySelector("img").src;
+
+      // Reload wishlist in case another tab updated it
+      wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      const exists = wishlist.some(item => item.id === productId);
+
+      if (exists) {
+        wishlist = wishlist.filter(item => item.id !== productId);
+        icon.classList.remove("active");
+      } else {
+        wishlist.push({
+          id: productId,
+          name: productName,
+          price: productPrice,
+          image: productImage
+        });
+        icon.classList.add("active");
+      }
+
+      // Save + notify other pages
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      window.dispatchEvent(new Event("wishlistUpdated"));
+    });
   });
 });
 
-// Mark saved items
-const saved = JSON.parse(localStorage.getItem('wishlist') || '[]');
-document.querySelectorAll('.wishlist-icon').forEach(icon => {
-  const name = icon.parentElement.querySelector('h3').textContent;
-  if (saved.includes(name)) icon.classList.add('active');
-});
 
