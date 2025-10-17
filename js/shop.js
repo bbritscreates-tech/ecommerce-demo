@@ -33,16 +33,35 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // CATEGORY FILTER
-  const categoryItems = document.querySelectorAll('.sidebar ul li');
-  categoryItems.forEach(item => {
-    item.addEventListener('click', () => {
-      categoryItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-      const category = item.dataset.category;
-      products.forEach(product => {
-        const prodCat = product.dataset.category;
-        product.style.display = (category==='all' || prodCat===category) ? '' : 'none';
-      });
+  // CATEGORY FILTER (includes dropdown items)
+const categoryItems = document.querySelectorAll('.sidebar li[data-category]');
+
+categoryItems.forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent clicks from bubbling up (important for dropdown)
+    
+    // remove 'active' from all items
+    categoryItems.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+    
+    // get category and filter
+    const category = item.dataset.category;
+    products.forEach(product => {
+      const prodCat = product.dataset.category;
+      product.style.display = (category === 'all' || prodCat === category) ? '' : 'none';
+    });
+  });
+});
+
+
+  // DROPDOWN TOGGLE for Lifestyle
+  const dropdownParents = document.querySelectorAll('.has-dropdown');
+
+  dropdownParents.forEach(parent => {
+    parent.addEventListener('click', (e) => {
+      // prevent triggering product filter on click
+      e.stopPropagation();
+      parent.classList.toggle('open');
     });
   });
 });

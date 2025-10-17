@@ -207,6 +207,22 @@ footer {
   color: #c47ea0;
 }
 
+/* Dropdown styles */
+.sidebar .dropdown {
+  display: none;
+  list-style: none;
+  padding-left: 15px;
+}
+
+.sidebar .has-dropdown.open > .dropdown {
+  display: block;
+}
+
+.sidebar .has-dropdown i {
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
 .product-grid {
   flex: 3;
   display: grid;
