@@ -260,6 +260,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  text-align: center;
 }
 
 /* Responsive: stack sidebar on top */
@@ -575,4 +576,39 @@ footer {
 
 .remove-wishlist:hover {
   background: #c0392b;
+}
+
+/* --- Wishlist Heart Overlay --- */
+.img-wrap {
+  position: relative;
+  overflow: hidden;   /* keeps heart inside rounded image corners if any */
+}
+
+.img-wrap img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.wishlist-icon:hover {
+  color: #e74c3c;
+  background: rgba(255, 255, 255, 1);
+}
+
+.wishlist-icon.active {
+  color: #e74c3c;
 }
