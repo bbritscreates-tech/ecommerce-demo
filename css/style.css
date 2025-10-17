@@ -238,6 +238,10 @@ footer {
   padding-left: 15px;
 }
 
+.sidebar .dropdown li {
+  color: #222;
+}
+
 .sidebar .has-dropdown.open > .dropdown {
   display: block;
 }
@@ -245,6 +249,10 @@ footer {
 .sidebar .has-dropdown i {
   margin-left: 5px;
   font-size: 0.8em;
+}
+
+.sidebar .has-dropdown.open > i {
+  transform: rotate(180deg);
 }
 
 .product-grid {
