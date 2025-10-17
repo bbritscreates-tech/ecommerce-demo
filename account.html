@@ -3,14 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pure Bloom Beauty | Checkout</title>
+        <title>My Account | Nature’s Veil</title>
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://kit.fontawesome.com/a2e0e9d6a8.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <!-- Navbar -->
         <header class="navbar">
             <div class="container nav-container">
-                <img class="logo" src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png" alt="Nature's Veil Logo Image"/>
+                <img class="logo" src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png" alt="Nature's Veil Logo">
                 <nav>
                     <a href="index.html">Home</a>
                     <a href="shop.html">Shop</a>
@@ -21,42 +22,53 @@
                 </nav>
             </div>
         </header>
-        <section class="checkout">
-            <div class="container">
-                <h2>Checkout</h2>
-                <form id="checkoutForm">
+        <!-- Account Section -->
+        <section class="account-page">
+            <div class="container account-container">
+                <div class="account-box">
+                    <h2>Login</h2>
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Email"
+                        required
+                    >
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Password"
+                        required
+                    >
+                    <button id="loginBtn">Login</button>
+                    <p>Don’t have an account?
+                        <a href="#" id="showRegister">Register here</a>
+                    </p>
+                </div>
+                <div class="account-box hidden" id="registerBox">
+                    <h2>Create Account</h2>
                     <input
                         type="text"
-                        name="name"
+                        id="registerName"
                         placeholder="Full Name"
                         required
                     >
                     <input
                         type="email"
-                        name="email"
+                        id="registerEmail"
                         placeholder="Email"
                         required
                     >
                     <input
-                        type="text"
-                        name="address"
-                        placeholder="Address"
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Password"
                         required
                     >
-                    <input
-                        type="text"
-                        name="phone"
-                        placeholder="Phone Number"
-                        required
-                    >
-                    <h3>Cart Summary</h3>
-                    <div id="checkoutCart"></div>
-                    <p>
-                        Total:
-                        <span id="checkoutTotal"></span>
+                    <button id="registerBtn">Register</button>
+                    <p>Already have an account?
+                        <a href="#" id="showLogin">Login here</a>
                     </p>
-                    <button type="submit" class="btn-primary">Place Order</button>
-                </form>
+                </div>
             </div>
         </section>
         <footer>
@@ -100,25 +112,6 @@
                 <p>Copyright &copy; 2025 Nature’s Veil. All rights reserved.</p>
             </section>
         </footer>
-        <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const checkoutCart = document.getElementById('checkoutCart');
-      const checkoutTotal = document.getElementById('checkoutTotal');
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      let total = 0;
-      cart.forEach(item => {
-        checkoutCart.innerHTML += `<p>${item.name} x${item.qty} - R${(item.price*item.qty).toFixed(2)}</p>`;
-        total += item.price*item.qty;
-      });
-      checkoutTotal.textContent = `R${total.toFixed(2)}`;
-
-      document.getElementById('checkoutForm').addEventListener('submit', e => {
-        e.preventDefault();
-        alert('Order placed! (Demo only)');
-        localStorage.removeItem('cart');
-        window.location.href = 'index.html';
-      });
-    });
-        </script>
+        <script src="js/account.js"></script>
     </body>
 </html>
