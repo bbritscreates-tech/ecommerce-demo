@@ -12,6 +12,7 @@
         <header class="navbar">
             <div class="container nav-container">
                 <img class="logo" src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png" alt="Nature's Veil Logo">
+                <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
                 <nav>
                     <a href="index.html">Home</a>
                     <a href="shop.html">Shop</a>
@@ -24,53 +25,62 @@
         </header>
         <!-- Account Section -->
         <section class="account-page">
-            <div class="container account-container">
-                <div class="account-box">
-                    <h2>Login</h2>
-                    <input
-                        type="email"
-                        id="loginEmail"
-                        placeholder="Email"
-                        required
-                    >
-                    <input
-                        type="password"
-                        id="loginPassword"
-                        placeholder="Password"
-                        required
-                    >
-                    <button id="loginBtn">Login</button>
-                    <p>Don’t have an account?
-                        <a href="#" id="showRegister">Register here</a>
-                    </p>
-                </div>
-                <div class="account-box hidden" id="registerBox">
-                    <h2>Create Account</h2>
-                    <input
-                        type="text"
-                        id="registerName"
-                        placeholder="Full Name"
-                        required
-                    >
-                    <input
-                        type="email"
-                        id="registerEmail"
-                        placeholder="Email"
-                        required
-                    >
-                    <input
-                        type="password"
-                        id="registerPassword"
-                        placeholder="Password"
-                        required
-                    >
-                    <button id="registerBtn">Register</button>
-                    <p>Already have an account?
-                        <a href="#" id="showLogin">Login here</a>
-                    </p>
-                </div>
-            </div>
-        </section>
+  <div class="container account-container">
+
+    <!-- LOGIN / REGISTER -->
+    <div class="account-box hidden" id="loginBox">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button id="loginBtn">Login</button>
+      <p>Don’t have an account? <a href="#" id="showRegister">Register here</a></p>
+    </div>
+
+    <div class="account-box hidden" id="registerBox">
+      <h2>Create Account</h2>
+      <input type="text" id="registerName" placeholder="Full Name" required>
+      <input type="email" id="registerEmail" placeholder="Email" required>
+      <input type="password" id="registerPassword" placeholder="Password" required>
+      <button id="registerBtn">Register</button>
+      <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="account-box hidden" id="dashboardBox">
+      <h2>Welcome, <span id="userName"></span></h2>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="profile">Profile</button>
+        <button class="tab-btn" data-tab="orders">My Orders</button>
+        <button class="tab-btn" data-tab="addresses">Addresses</button>
+      </div>
+
+      <div class="tab-content" id="profileTab">
+        <h3>Edit Profile</h3>
+        <input type="text" id="profileName" placeholder="Full Name">
+        <input type="email" id="profileEmail" placeholder="Email" disabled>
+        <button id="saveProfileBtn">Save Changes</button>
+        <button id="logoutBtn" class="logout">Logout</button>
+      </div>
+
+      <div class="tab-content hidden" id="ordersTab">
+        <h3>My Orders</h3>
+        <ul id="ordersList" class="orders-list"></ul>
+      </div>
+
+      <div class="tab-content hidden" id="addressesTab">
+        <h3>Saved Addresses</h3>
+        <ul id="addressList" class="address-list"></ul>
+        <input type="text" id="newAddress" placeholder="Add new address">
+        <button id="addAddressBtn">Add Address</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="js/account.js"></script>
+
         <footer>
             <section class="footer-container">
                 <div class="footer-box border">

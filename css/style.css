@@ -35,6 +35,30 @@ nav a:hover {
     color: #759b35;
 }
 
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
 .hero {
     position: relative;
     background: url() center/cover no-repeat;
@@ -434,4 +458,78 @@ footer {
 
 .hidden {
   display: none;
+}
+
+.orders-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.orders-list li {
+  background: #f5f5f5;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px;
+  background: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tab-btn.active {
+  background: #4b8b3b;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content:not(.hidden) {
+  display: block;
+}
+
+.logout {
+  background: #c0392b;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.logout:hover {
+  background: #a83224;
+}
+
+.wishlist-icon {
+  color: #ccc;
+  cursor: pointer;
+  float: right;
+  margin-top: -10px;
+}
+
+.wishlist-icon.active {
+  color: #e74c3c;
+}
+
+.cart-count {
+  background: #ff4d4d;
+  color: #fff;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: relative;
+  top: -10px;
+  left: -5px;
 }
