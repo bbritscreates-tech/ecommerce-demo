@@ -57,6 +57,10 @@ nav a:hover {
   .menu-toggle {
     display: block;
   }
+
+  .cart-nav {
+    padding-top: 10px;
+  }
 }
 
 .hero {
@@ -65,14 +69,22 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 300px;
 }
 
+.hero img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
 .hero-overlay {
-    background: rgba(0, 0, 0, 0.5);
     color: #222;
     text-align: center;
     padding: 2rem;
     border-radius: 10px;
+    position: absolute;
+    margin-top: 100px;
 }
 
 .hero h2 {
