@@ -22,10 +22,7 @@ body {
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8 rem;
-    font-weight: 700;
-    color: #222;
+    width: 100px;
 }
 
 nav a {
