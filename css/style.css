@@ -623,7 +623,7 @@ footer {
   color: #e74c3c;
 }
 
-.terms-hero, .shipping-hero {
+.terms-hero, .shipping-hero, .contact-hero {
   position: relative;
   display: flex;
   justify-content: center;
@@ -631,13 +631,13 @@ footer {
   height: 200px;
 }
 
-.terms-hero img, .shipping-hero img {
+.terms-hero img, .shipping-hero img, .contact-hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.terms-overlay, .shipping-overlay {
+.terms-overlay, .shipping-overlay, .contact-overlay {
   color: #3c742e;
   text-align: center;
   position: absolute;
@@ -648,5 +648,34 @@ footer {
   padding: 30px 30px;
 }
 
+.info {
+  padding: 30px 30px;
+  display: flex;
+  justify-content:space-between;
+}
 
+.contact-info {
+  flex: 1;
+}
 
+.contact-info form {
+  width: 300px;
+}
+
+.contact-info form input {
+  width: 300px;
+}
+
+.contact-info form textarea {
+  width: 300px;
+  height: 75px;
+}
+
+.contact-info form button {
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-info form input:hover, .contact-info form textarea:hover {
+ border: 2px solid #759b35;
+}
