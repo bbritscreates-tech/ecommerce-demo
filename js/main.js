@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (loggedInUser) {
       // User is logged in → go to dashboard view
-      window.location.href = 'account.html?view=dashboard';
+      window.location.href = '../account.html?view=dashboard';
     } else {
       // User not logged in → go to login/register
-      window.location.href = 'account.html?view=login';
+      window.location.href = '../account.html?view=login';
     }
   });
 });

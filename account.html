@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Account | Nature’s Veil</title>
+        <title>Nature's Veil | My Account</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/a2e0e9d6a8.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
     </head>
+
     <body>
         <!-- Navbar -->
         <header class="navbar">
             <div class="container nav-container">
-                <img class="logo" src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png" alt="Nature's Veil Logo">
+                <img class="logo" src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png"
+                    alt="Nature's Veil Logo">
                 <div class="menu-toggle">
                     <i class="fa-solid fa-bars"></i>
                 </div>
@@ -32,18 +38,8 @@
                 <!-- LOGIN / REGISTER -->
                 <div class="account-box hidden" id="loginBox">
                     <h2>Login</h2>
-                    <input
-                        type="email"
-                        id="loginEmail"
-                        placeholder="Email"
-                        required
-                    >
-                    <input
-                        type="password"
-                        id="loginPassword"
-                        placeholder="Password"
-                        required
-                    >
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
                     <button id="loginBtn">Login</button>
                     <p>Don’t have an account?
                         <a href="#" id="showRegister">Register here</a>
@@ -51,24 +47,9 @@
                 </div>
                 <div class="account-box hidden" id="registerBox">
                     <h2>Create Account</h2>
-                    <input
-                        type="text"
-                        id="registerName"
-                        placeholder="Full Name"
-                        required
-                    >
-                    <input
-                        type="email"
-                        id="registerEmail"
-                        placeholder="Email"
-                        required
-                    >
-                    <input
-                        type="password"
-                        id="registerPassword"
-                        placeholder="Password"
-                        required
-                    >
+                    <input type="text" id="registerName" placeholder="Full Name" required>
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
                     <button id="registerBtn">Register</button>
                     <p>Already have an account?
                         <a href="#" id="showLogin">Login here</a>
@@ -87,12 +68,7 @@
                     <div class="tab-content" id="profileTab">
                         <h3>Edit Profile</h3>
                         <input type="text" id="profileName" placeholder="Full Name">
-                        <input
-                            type="email"
-                            id="profileEmail"
-                            placeholder="Email"
-                            disabled
-                        >
+                        <input type="email" id="profileEmail" placeholder="Email" disabled>
                         <button id="saveProfileBtn">Save Changes</button>
                         <button id="logoutBtn" class="logout">Logout</button>
                     </div>
@@ -107,14 +83,13 @@
                         <button id="addAddressBtn">Add Address</button>
                     </div>
                     <div class="tab-content" id="wishlistTab">
-                    <h3>My Wishlist</h3>
-                    <div id="wishlistContainer" class="wishlist-container"></div>
+                        <h3>My Wishlist</h3>
+                        <div id="wishlistContainer" class="wishlist-container"></div>
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
         </section>
-        <script src="js/account.js"></script>
         <footer>
             <section class="footer-container">
                 <div class="footer-box border">
@@ -133,11 +108,11 @@
                 </div>
             </section>
             <section class="footer-end">
-                <a href="href="https://www.facebook.com/naturesveilsa" target="_blank"">
-                    <i class="fa-brands fa-facebook"></i>
+                <a href="https://www.facebook.com/naturesveilsa" target="_blank">
+                        <i class=" fa-brands fa-facebook"></i>
                 </a>
-                <a href="href="https://www.instagram.com/naturesveilsa" target="_blank"">
-                    <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/naturesveilsa" target="_blank">
+                        <i class=" fa-brands fa-instagram"></i>
                 </a>
                 <p>Copyright &copy; 2025 Nature’s Veil. All rights reserved.</p>
             </section>

@@ -435,10 +435,7 @@ footer {
   justify-self: center;
 }
 
-.checkout .container form button {
-  margin-left: 18px;
-  margin-bottom: 20px;
-}
+
 
 .account-page {
   display: flex;
@@ -678,4 +675,127 @@ footer {
 
 .contact-info form input:hover, .contact-info form textarea:hover {
  border: 2px solid #759b35;
+}
+
+.checkout .container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.checkout .container h2 {
+  justify-self: center;
+}
+
+.checkout-items img {
+  width: 60px;
+  border-radius: 5px;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.summary-box {
+  margin-top: 1.5em;
+  padding: 1em;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.delivery-notice {
+  margin: 1em 0;
+  text-align: center;
+  font-weight: 500;
+  color: #555;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.8em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Payment Section Container */
+.payment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 1em 0 2em;
+  justify-content: center;
+}
+
+/* Individual Payment Card */
+.payment-options label {
+  background: #f7f7f7;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 0.8em 1.4em;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* Radio Buttons Hidden */
+.payment-options input[type="radio"] {
+  display: none;
+}
+
+/* Hover Effect */
+.payment-options label:hover {
+  background: #edf6ed;
+  border-color: #7da97c;
+  color: #2d4a2d;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Selected (Checked) Style */
+.payment-options input[type="radio"]:checked + label {
+  background: #7da97c;
+  color: #fff;
+  border-color: #658b5d;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .payment-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  .payment-options label {
+    width: 90%;
+  }
+}
+
+.checkout-btn {
+  
+}
+
+.btn-primary {
+  display: block;
+  margin: 1em auto 0;
+  padding: 0.8em 2em;
+  background: #658b5d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #52744a;
 }

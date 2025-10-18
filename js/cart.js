@@ -36,15 +36,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateTotals() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let total = 0;
-    cart.forEach(item => {
-      const price = parseFloat(item.price) || 0;
-      const qty = parseInt(item.qty) || 0;
-      total += price * qty;
-    });
-    totalAmountEl.textContent = `R${total.toFixed(2)}`;
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let subtotal = 0;
+  cart.forEach(item => {
+    const price = parseFloat(item.price) || 0;
+    const qty = parseInt(item.qty) || 0;
+    subtotal += price * qty;
+  });
+
+  // Delivery fee logic — R83, free for orders ≥ R6000
+  let deliveryFee = subtotal >= 6000 ? 0 : 83;
+  let total = subtotal + deliveryFee;
+
+  // Update totals display
+  const totalAmountEl = document.getElementById('totalAmount');
+  if (totalAmountEl) {
+    totalAmountEl.innerHTML = `
+      <div>Subtotal: R${subtotal.toFixed(2)}</div>
+      <div>Delivery: ${deliveryFee === 0 ? '<span style="color:green;">Free</span>' : 'R' + deliveryFee.toFixed(2)}</div>
+      <hr>
+      <strong>Total: R${total.toFixed(2)}</strong>
+    `;
   }
+
+  // Store delivery fee for checkout
+  localStorage.setItem('deliveryFee', deliveryFee);
+}
+
 
   function attachEvents() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
