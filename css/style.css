@@ -427,7 +427,8 @@ footer {
 }
 
 .checkout {
-  justify-items: center;
+  
+  margin: 30px 0;
 }
 
 .checkout .container h2 {
