@@ -214,11 +214,13 @@ footer {
   display: flex;
   gap: 2rem;
   max-width: 1200px;
-  margin: 2rem auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
 }
 
 .sidebar {
-  flex: 1;
+  flex: initial;
   min-width: 150px;
   border: 1px solid #eee;
   border-radius: 12px;
@@ -272,6 +274,12 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   text-align: center;
+    /* Added to prevent overflow */
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Responsive: stack sidebar on top */
@@ -279,6 +287,11 @@ footer {
   .shop-container {
     flex-direction: column;
   }
+}
+
+.recently-viewed {
+  padding-left: 30px;
+  padding-bottom: 10px;
 }
 
 /* ===== Product Page ===== */
@@ -434,8 +447,6 @@ footer {
   color: #222;
   justify-self: center;
 }
-
-
 
 .account-page {
   display: flex;
@@ -779,10 +790,6 @@ footer {
   .payment-options label {
     width: 90%;
   }
-}
-
-.checkout-btn {
-  
 }
 
 .btn-primary {
