@@ -1,301 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nature's Veil | Shop</title>
-        <link rel="stylesheet" href="css/style.css">
-        <script src="https://kit.fontawesome.com/a2e0e9d6a8.js" crossorigin="anonymous"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        >
-    </head>
-    <body>
-        <!--Navbar-->
-        <header class="navbar">
-            <div class="container nav-container">
-                <img class="logo" src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png" alt="Nature's Veil Logo Image">
-                <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
-                <nav class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="shop.html">Shop</a>
-                    <a href="account.html" id="accountLink">My Account</a>
-                    <a href="cart.html">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="cart-count" id="cartCount">0</span>
-                    </a>
-                </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nature's Veil | Shop</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/a2e0e9d6a8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!--Navbar-->
+    <header class="navbar">
+      <div class="container nav-container">
+        <img
+          class="logo"
+          src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png"
+          alt="Nature's Veil Logo Image"
+        />
+        <div class="menu-toggle">
+          <button id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+          <ul id="mobile-dropdown-menu" class="mobile-dropdown">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="account.html" id="accountLink">My Account</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="account.html" id="accountLink">My Account</a>
+          <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- Shop Section -->
+    <section class="categories">
+      <div class="categories-mobile">
+        <ul>
+            <li data-category="all" class="active">All</li>
+            <li data-category="face">Face Care</li>
+            <li data-category="body">Body Care</li>
+            <li data-category="shakes">Shakes</li>
+            <li data-category="vitamins">Vitamins</li>
+            <li data-category="hair">Hair</li>
+        </ul>
+      </div>
+    </section>
+    <section class="shop-page">
+      <div class="container shop-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <ul>
+            <li data-category="all" class="active">All</li>
+            <li data-category="face">Face Care</li>
+            <li data-category="body">Body Care</li>
+            <!-- Lifestyle with dropdown -->
+            <li class="has-dropdown" data-category="lifestyle">
+              Lifestyle
+              <i class="fa-solid fa-caret-down"></i>
+              <ul class="dropdown">
+                <li data-category="shakes">Shakes</li>
+                <li data-category="vitamins">Vitamins</li>
+              </ul>
+            </li>
+            <li data-category="hair">Hair</li>
+          </ul>
+        </aside>
+        <!-- Products -->
+        <div class="product-grid">
+          <div class="product-card" data-category="face" data-id="daycream">
+            <div class="img-wrap">
+              <a href="product pages/daycream.html?product=daycream">
+                <img
+                  src="images/products/Nature's Veil Day cream.png"
+                  alt="Day Cream Image"
+                />
+                <h3>Day Cream</h3>
+              </a>
             </div>
-        </header>
-        <!-- Shop Section -->
-        <section class="shop-page">
-            <div class="container shop-container">
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    <ul>
-                        <li data-category="all" class="active">All</li>
-                        <li data-category="face">Face Care</li>
-                        <li data-category="body">Body Care</li>
-                        <!-- Lifestyle with dropdown -->
-                        <li class="has-dropdown" data-category="lifestyle">
-                            Lifestyle
-                            <i class="fa-solid fa-caret-down"></i>
-                            <ul class="dropdown">
-                                <li data-category="shakes">Shakes</li>
-                                <li data-category="vitamins">Vitamins</li>
-                            </ul>
-                        </li>
-                        <li data-category="hair">Hair</li>
-                    </ul>
-                </aside>
-                <!-- Products -->
-                <div class="product-grid">
-                    <div class="product-card" data-category="face" data-id="daycream">
-                        <div class="img-wrap">
-                            <a href="product pages/daycream.html?product=daycream">
-                                <img src="images/products/Nature's Veil Day cream.png" alt="Day Cream Image">
-                                <h3>Day Cream</h3>
-                            </a>
-                        </div>    
-                        <p>R209.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="face" data-id="nightcream">
-                        <div class="img-wrap">
-                            <a href="product pages/nightcream.html?product=nightcream">
-                                <img src="images/products/Nature's Veil Night cream.png" alt="Night Cream Image">
-                                <h3>Night Cream</h3>
-                            </a>
-                        </div>    
-                        <p>R209.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="face" data-id="facecleanser">
-                        <div class="img-wrap">
-                            <a href="product pages/facecleanser.html?product=facecleanser">
-                                <img src="images/products/Nature's Veil Soap.png" alt="Face Cleanser Image">
-                                <h3>Face Cleanser</h3>
-                            </a>
-                        </div>    
-                        <p>R109.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="face" data-id="exfoliator">
-                        <div class="img-wrap">
-                            <a href="product pages/exfoliator.html?product=exfoliator">
-                                <img src="images/products/Nature's Veil Exfoliator.png" alt="Exfoliator Image">
-                                <h3>Exfoliatior</h3>
-                            </a>
-                        </div>    
-                        <p>R369.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="face" data-id="facemask">
-                        <div class="img-wrap">
-                            <a href="product pages/facemask.html?product=facemask">
-                                <img src="images/products/Nature's Veil Face mask.png" alt="Face Mask Image">
-                                <h3>Face Mask</h3>
-                            </a>
-                        </div>    
-                        <p>R169.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="body" data-id="bodylotion">
-                        <div class="img-wrap">
-                            <a href="product pages/bodylotion.html?product=bodylotion">
-                                <img src="images/products/Nature's Veil Body Lotion.png" alt="Body Lotion Image">
-                                <h3>Body Lotion</h3>
-                            </a>
-                        </div>    
-                        <p>R209.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="body" data-id="showergel">
-                        <div class="img-wrap">
-                            <a href="product pages/showergel.html?product=showergel">
-                                <img src="images/products/Nature's Veil Body Wash.png" alt="Shower Gel Image">
-                                <h3>Shower Gel</h3>
-                            </a>
-                        </div>    
-                        <p>R269.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="body" data-id="bodybutter">
-                        <div class="img-wrap">
-                            <a href="product pages/bodybutter.html?product=bodybutter">
-                                <img src="images/products/Nature's Veil Body Butter.png" alt="Body Butter Image">
-                                <h3>Body Butter</h3>
-                            </a>
-                        </div>    
-                        <p>R389.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="body" data-id="handcream">
-                        <div class="img-wrap">
-                            <a href="product pages/handcream.html?product=handcream">
-                                <img src="images/products/Nature's Veil Hand cream (1).png" alt="Hand Cream Image">
-                                <h3>Hand Cream</h3>
-                            </a>
-                        </div>    
-                        <p>R119.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="hair" data-id="shampoo">
-                        <div class="img-wrap">
-                            <a href="product pages/shampoo.html?product=shampoo">
-                                <img src="images/products/Nature's Veil Shampoo.png" alt="Shampoo Image">
-                                <h3>Shampoo</h3>
-                            </a>
-                        </div>    
-                        <p>R249.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="hair" data-id="conditioner">
-                        <div class="img-wrap">
-                            <a href="product pages/conditioner.html?product=conditioner">
-                                <img src="images/products/Nature's Veil Conditioner.png" alt="Conditioner Image">
-                                <h3>Conditioner</h3>
-                            </a>
-                        </div>    
-                        <p>R249.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="shakes" data-id="shakevanilla">
-                        <div class="img-wrap">
-                            <a href="product pages/shakevanilla.html?product=shakevanilla">
-                                <img src="images/products/Nature's Veil Shake Vanilla.png" alt="Shake Vanilla Image">
-                                <h3>Lifestyle Shake Vanilla</h3>
-                            </a>
-                        </div>    
-                        <p>R629.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="shakes" data-id="shakestrawberry">
-                        <div class="img-wrap">
-                            <a href="product pages/shakestrawberry.html?product=shakestrawberry">
-                                <img src="images/products/Nature's Veil shake strawberry.png" alt="Shake Strawberry Image">
-                                <h3>Lifestyle Shake Strawberry</h3>
-                            </a>
-                        </div>    
-                        <p>R629.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="shakes" data-id="shakechocolate">
-                        <div class="img-wrap">
-                            <a href="product pages/shakechocolate.html?product=shakechocolate">
-                                <img src="images/products/Nature's Veil shake chocolate.png" alt="Shake Chocolate Image">
-                                <h3>Lifestyle Shake Chocolate</h3>
-                            </a>
-                        </div>    
-                        <p>R629.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="vitamins" data-id="iron">
-                        <div class="img-wrap">
-                            <a href="product pages/iron.html?product=iron">
-                                <img src="images/products/Nature's Veil Iron.png" alt="Iron Vitamin Image">
-                                <h3>Iron</h3>
-                            </a>
-                        </div>    
-                        <p>R135.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="vitamins" data-id="vitaminc">
-                        <div class="img-wrap">
-                            <a href="product pages/vitaminc.html?product=vitaminc">
-                                <img src="images/products/Nature's Veil Vitamin C.png" alt="Vitamin C Image">
-                                <h3>Vitamin C</h3>
-                            </a>
-                        </div>    
-                        <p>R135.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="vitamins" data-id="d3k2">
-                        <div class="img-wrap">
-                            <a href="product pages/d3k3.html?product=d3&k2">
-                                <img src="images/products/Nature's Veil D3 & K2.png" alt="D3 & K2 Vitamin Image">
-                                <h3>D3 & K2</h3>
-                            </a>
-                        </div>    
-                        <p>R135.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                    <div class="product-card" data-category="vitamins" data-id="zinc">
-                        <div class="img-wrap">
-                            <a href="product pages/zinc.html?product=zinc">
-                                <img src="images/products/Nature's Veil Zinc.png" alt="Zinc Vitamin Image">
-                                <h3>Zinc</h3>
-                            </a>
-                        </div>    
-                        <p>R135.00</p>
-                        <i class="fa-solid fa-heart wishlist-icon"></i>
-                        <button class="btn-add">Add to Cart</button>
-                    </div>
-                </div>
+            <p>R209.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="face" data-id="nightcream">
+            <div class="img-wrap">
+              <a href="product pages/nightcream.html?product=nightcream">
+                <img
+                  src="images/products/Nature's Veil Night cream.png"
+                  alt="Night Cream Image"
+                />
+                <h3>Night Cream</h3>
+              </a>
             </div>
-        </section>
-        <section class="recently-viewed">
-            <h3>Recently Viewed</h3>
-            <ul id="recentList"></ul>
-        </section>
-        <footer>
-            <section class="footer-container">
-                <div class="footer-box border">
-                    <h3>Information</h3>
-                    <a href="shipping.html">Shipping</a>
-                    <br>
-                    <a href="terms.html">T & C</a>
-                    <br>
-                    <a href="contact.html">Contact Us</a>
-                </div>
-                <div class="footer-box">
-                    <h3>My Account</h3>
-                    <a href="account.html">My Account</a>
-                    <br>
-                    <a href="cart.html">Shopping cart</a>
-                </div>
-            </section>
-            <section class="footer-end">
-                <a href="https://www.facebook.com/naturesveilsa" target="_blank">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/naturesveilsa" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <p>Copyright &copy; 2025 Nature’s Veil. All rights reserved.</p>
-            </section>
-        </footer>
-        <!-- JS at the end of body -->
-        <script src="js/shop.js"></script>
-        <script src="js/main.js"></script>
-        <!-- Display recently viewed-->
-        <script>
-const list = document.getElementById('recentList');
-if (list) {
-  const viewed = JSON.parse(localStorage.getItem('recentlyViewed') || '[]');
-  list.innerHTML = viewed.length ? viewed.map(v => `<li>${v}</li>`).join('') : '<li>No products yet.</li>';
-}
-        </script>
-    </body>
+            <p>R209.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="face" data-id="facecleanser">
+            <div class="img-wrap">
+              <a href="product pages/facecleanser.html?product=facecleanser">
+                <img
+                  src="images/products/Nature's Veil Soap.png"
+                  alt="Face Cleanser Image"
+                />
+                <h3>Face Cleanser</h3>
+              </a>
+            </div>
+            <p>R109.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="face" data-id="exfoliator">
+            <div class="img-wrap">
+              <a href="product pages/exfoliator.html?product=exfoliator">
+                <img
+                  src="images/products/Nature's Veil Exfoliator.png"
+                  alt="Exfoliator Image"
+                />
+                <h3>Exfoliatior</h3>
+              </a>
+            </div>
+            <p>R369.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="face" data-id="facemask">
+            <div class="img-wrap">
+              <a href="product pages/facemask.html?product=facemask">
+                <img
+                  src="images/products/Nature's Veil Face mask.png"
+                  alt="Face Mask Image"
+                />
+                <h3>Face Mask</h3>
+              </a>
+            </div>
+            <p>R169.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="body" data-id="bodylotion">
+            <div class="img-wrap">
+              <a href="product pages/bodylotion.html?product=bodylotion">
+                <img
+                  src="images/products/Nature's Veil Body Lotion.png"
+                  alt="Body Lotion Image"
+                />
+                <h3>Body Lotion</h3>
+              </a>
+            </div>
+            <p>R209.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="body" data-id="showergel">
+            <div class="img-wrap">
+              <a href="product pages/showergel.html?product=showergel">
+                <img
+                  src="images/products/Nature's Veil Body Wash.png"
+                  alt="Shower Gel Image"
+                />
+                <h3>Shower Gel</h3>
+              </a>
+            </div>
+            <p>R269.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="body" data-id="bodybutter">
+            <div class="img-wrap">
+              <a href="product pages/bodybutter.html?product=bodybutter">
+                <img
+                  src="images/products/Nature's Veil Body Butter.png"
+                  alt="Body Butter Image"
+                />
+                <h3>Body Butter</h3>
+              </a>
+            </div>
+            <p>R389.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="body" data-id="handcream">
+            <div class="img-wrap">
+              <a href="product pages/handcream.html?product=handcream">
+                <img
+                  src="images/products/Nature's Veil Hand cream (1).png"
+                  alt="Hand Cream Image"
+                />
+                <h3>Hand Cream</h3>
+              </a>
+            </div>
+            <p>R119.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="hair" data-id="shampoo">
+            <div class="img-wrap">
+              <a href="product pages/shampoo.html?product=shampoo">
+                <img
+                  src="images/products/Nature's Veil Shampoo.png"
+                  alt="Shampoo Image"
+                />
+                <h3>Shampoo</h3>
+              </a>
+            </div>
+            <p>R249.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="hair" data-id="conditioner">
+            <div class="img-wrap">
+              <a href="product pages/conditioner.html?product=conditioner">
+                <img
+                  src="images/products/Nature's Veil Conditioner.png"
+                  alt="Conditioner Image"
+                />
+                <h3>Conditioner</h3>
+              </a>
+            </div>
+            <p>R249.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div
+            class="product-card"
+            data-category="shakes"
+            data-id="shakevanilla"
+          >
+            <div class="img-wrap">
+              <a href="product pages/shakevanilla.html?product=shakevanilla">
+                <img
+                  src="images/products/Nature's Veil Shake Vanilla.png"
+                  alt="Shake Vanilla Image"
+                />
+                <h3>Lifestyle Shake Vanilla</h3>
+              </a>
+            </div>
+            <p>R629.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div
+            class="product-card"
+            data-category="shakes"
+            data-id="shakestrawberry"
+          >
+            <div class="img-wrap">
+              <a
+                href="product pages/shakestrawberry.html?product=shakestrawberry"
+              >
+                <img
+                  src="images/products/Nature's Veil shake strawberry.png"
+                  alt="Shake Strawberry Image"
+                />
+                <h3>Lifestyle Shake Strawberry</h3>
+              </a>
+            </div>
+            <p>R629.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div
+            class="product-card"
+            data-category="shakes"
+            data-id="shakechocolate"
+          >
+            <div class="img-wrap">
+              <a
+                href="product pages/shakechocolate.html?product=shakechocolate"
+              >
+                <img
+                  src="images/products/Nature's Veil shake chocolate.png"
+                  alt="Shake Chocolate Image"
+                />
+                <h3>Lifestyle Shake Chocolate</h3>
+              </a>
+            </div>
+            <p>R629.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="vitamins" data-id="iron">
+            <div class="img-wrap">
+              <a href="product pages/iron.html?product=iron">
+                <img
+                  src="images/products/Nature's Veil Iron.png"
+                  alt="Iron Vitamin Image"
+                />
+                <h3>Iron</h3>
+              </a>
+            </div>
+            <p>R135.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="vitamins" data-id="vitaminc">
+            <div class="img-wrap">
+              <a href="product pages/vitaminc.html?product=vitaminc">
+                <img
+                  src="images/products/Nature's Veil Vitamin C.png"
+                  alt="Vitamin C Image"
+                />
+                <h3>Vitamin C</h3>
+              </a>
+            </div>
+            <p>R135.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="vitamins" data-id="d3k2">
+            <div class="img-wrap">
+              <a href="product pages/d3k3.html?product=d3&k2">
+                <img
+                  src="images/products/Nature's Veil D3 & K2.png"
+                  alt="D3 & K2 Vitamin Image"
+                />
+                <h3>D3 & K2</h3>
+              </a>
+            </div>
+            <p>R135.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+          <div class="product-card" data-category="vitamins" data-id="zinc">
+            <div class="img-wrap">
+              <a href="product pages/zinc.html?product=zinc">
+                <img
+                  src="images/products/Nature's Veil Zinc.png"
+                  alt="Zinc Vitamin Image"
+                />
+                <h3>Zinc</h3>
+              </a>
+            </div>
+            <p>R135.00</p>
+            <i class="fa-solid fa-heart wishlist-icon"></i>
+            <button class="btn-add">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="recently-viewed">
+      <h3>Recently Viewed</h3>
+      <ul id="recentList"></ul>
+    </section>
+    <footer>
+      <section class="footer-container">
+        <div class="footer-box border">
+          <h3>Information</h3>
+          <a href="shipping.html">Shipping</a>
+          <br />
+          <a href="terms.html">T & C</a>
+          <br />
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-box">
+          <h3>My Account</h3>
+          <a href="account.html">My Account</a>
+          <br />
+          <a href="cart.html">Shopping cart</a>
+        </div>
+      </section>
+      <section class="footer-end">
+        <div>
+          <a href="https://www.facebook.com/naturesveilsa" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/naturesveilsa" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <div>
+          <p>Copyright &copy; 2025 Nature’s Veil. All rights reserved.</p>
+        </div>
+      </section>
+    </footer>
+    <!-- JS at the end of body -->
+    <script src="js/shop.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Display recently viewed-->
+    <script>
+      const list = document.getElementById("recentList");
+      if (list) {
+        const viewed = JSON.parse(
+          localStorage.getItem("recentlyViewed") || "[]"
+        );
+        list.innerHTML = viewed.length
+          ? viewed.map((v) => `<li>${v}</li>`).join("")
+          : "<li>No products yet.</li>";
+      }
+    </script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/shop-mobile.js"></script>
+  </body>
 </html>
