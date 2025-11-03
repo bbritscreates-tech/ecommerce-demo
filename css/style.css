@@ -420,6 +420,10 @@ footer {
   padding: 1rem;
 }
 
+.cart-container h2 {
+  text-align: center;
+}
+
 .cart-table {
   width: 100%;
   border-collapse: collapse;
@@ -899,6 +903,10 @@ footer {
   .product-grid {
     justify-items: center;
     margin-left: 30px;
+  }
+
+  .cart-container h2 {
+    justify-self: center;
   }
 }
 
