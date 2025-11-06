@@ -717,14 +717,14 @@ footer {
   width: 300px;
 }
 
-.contact-info form input {
-  width: 300px;
+.contact-info form input, .contact-info form textarea {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.8em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-.contact-info form textarea {
-  width: 300px;
-  height: 75px;
-}
 
 .contact-info form button {
   display: block;
@@ -918,7 +918,22 @@ footer {
     margin: 0 auto;
   }
 
-  
+  .info {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-overlay h1 {
+    font-size: 55px;
+  }
+
+  .contact-info form {
+    margin-top: 1em;
+    margin-right: 20px;
+  }
+
 }
 
 @media (min-width: 481px) and (max-width: 640px) {
@@ -980,6 +995,22 @@ footer {
 
   .checkout-form .payment-options, .checkout-form h3 {
     margin-right: -20px;
+  }
+
+  .info {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-overlay h1 {
+    font-size: 55px;
+  }
+
+  .contact-info form {
+    margin-top: 1em;
+    margin-right: 20px;
   }
 
   
@@ -1045,6 +1076,22 @@ footer {
   .checkout-form .payment-options, .checkout-form h3 {
     margin-right: -20px;
   }
+
+  .info {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-overlay h1 {
+    font-size: 55px;
+  }
+
+  .contact-info form {
+    margin-top: 1em;
+    margin-right: 20px;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 900px) {
@@ -1094,6 +1141,22 @@ footer {
   .checkout-form .payment-options, .checkout-form h3 {
     margin-right: -20px;
   }
+
+  .info {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-overlay h1 {
+    font-size: 55px;
+  }
+
+  .contact-info form {
+    margin-top: 1em;
+    margin-right: 20px;
+  }
 }
 
 @media (min-width: 901px) and (max-width: 1024px) {
@@ -1135,6 +1198,22 @@ footer {
   .checkout-form .payment-options, .checkout-form h3 {
     margin-right: -20px;
   }
+
+  .info {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-overlay h1 {
+    font-size: 55px;
+  }
+
+  .contact-info form {
+    margin-top: 1em;
+    margin-right: 20px;
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
@@ -1162,5 +1241,21 @@ footer {
   .product-grid {
     justify-items: center;
     margin-left: 90px;
+  }
+
+  .info {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-overlay h1 {
+    font-size: 55px;
+  }
+
+  .contact-info form {
+    margin-top: 1em;
+    margin-right: 20px;
   }
 }
