@@ -22,7 +22,15 @@
           src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png"
           alt="Nature's Veil Logo"
         />
-        <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+        <div class="menu-toggle">
+          <button id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+          <ul id="mobile-dropdown-menu" class="mobile-dropdown">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="account.html" id="accountLink">My Account</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
         <nav class="nav-links">
           <a href="index.html">Home</a>
           <a href="shop.html">Shop</a>
@@ -53,7 +61,9 @@
             <p>Subtotal: <span id="summary-subtotal">R0.00</span></p>
             <p>Delivery: <span id="summary-delivery">R0.00</span></p>
             <hr />
-            <p><strong>Total: <span id="summary-total">R0.00</span></strong></p>
+            <p>
+              <strong>Total: <span id="summary-total">R0.00</span></strong>
+            </p>
           </div>
         </div>
 
@@ -61,10 +71,33 @@
         <form id="checkoutForm" class="checkout-form">
           <h3>Delivery Details</h3>
 
-          <input type="text" id="name" name="name" placeholder="Full Name" required />
-          <input type="email" id="email" name="email" placeholder="Email" required />
-          <textarea id="address" name="address" placeholder="Delivery Address" required></textarea>
-          <input type="text" id="phone" name="phone" placeholder="Phone Number" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Full Name"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <textarea
+            id="address"
+            name="address"
+            placeholder="Delivery Address"
+            required
+          ></textarea>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="Phone Number"
+            required
+          />
 
           <h3>Payment Method</h3>
           <div class="payment-options">
@@ -82,7 +115,7 @@
             </label>
           </div>
 
-          <button type="submit" class="btn-primary">Place Order</button>
+          <button type="submit" class="btn-primary mobile-btn">Place Order</button>
         </form>
       </div>
     </section>
@@ -105,18 +138,23 @@
       </section>
 
       <section class="footer-end">
-        <a href="https://www.facebook.com/naturesveilsa" target="_blank">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/naturesveilsa" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <p>Copyright &copy; 2025 Nature’s Veil. All rights reserved.</p>
+        <div>
+          <a href="https://www.facebook.com/naturesveilsa" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/naturesveilsa" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <div>
+          <p>Copyright &copy; 2025 Nature’s Veil. All rights reserved.</p>
+        </div>
       </section>
     </footer>
 
     <!-- ===== SCRIPTS ===== -->
     <script src="js/main.js"></script>
     <script src="js/checkout.js"></script>
+    <script src="js/mobile-nav.js"></script>
   </body>
 </html>
