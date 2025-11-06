@@ -512,8 +512,8 @@ footer {
 }
 
 .account-box input {
-  width: 100%;
-  margin: 8px 0;
+  width: 93%;
+  margin-bottom: 1em;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -918,8 +918,7 @@ footer {
     margin: 0 auto;
   }
 
-
-
+  
 }
 
 @media (min-width: 481px) and (max-width: 640px) {

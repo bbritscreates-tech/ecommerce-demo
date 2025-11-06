@@ -1,123 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nature's Veil | My Account</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/a2e0e9d6a8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nature's Veil | My Account</title>
-        <link rel="stylesheet" href="css/style.css">
-        <script src="https://kit.fontawesome.com/a2e0e9d6a8.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer">
-    </head>
-
-    <body>
-        <!-- Navbar -->
-        <header class="navbar">
-            <div class="container nav-container">
-                <img class="logo" src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png"
-                    alt="Nature's Veil Logo">
-                <div class="menu-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-                <nav class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="shop.html">Shop</a>
-                    <a href="account.html" id="accountLink">My Account</a>
-                    <a href="cart.html">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="cart-count" id="cartCount">0</span>
-                    </a>
-                </nav>
-            </div>
-        </header>
-        <!-- Account Section -->
-        <section class="account-page">
-            <div class="container account-container">
-                <!-- LOGIN / REGISTER -->
-                <div class="account-box hidden" id="loginBox">
-                    <h2>Login</h2>
-                    <input type="email" id="loginEmail" placeholder="Email" required>
-                    <input type="password" id="loginPassword" placeholder="Password" required>
-                    <button id="loginBtn">Login</button>
-                    <p>Don’t have an account?
-                        <a href="#" id="showRegister">Register here</a>
-                    </p>
-                </div>
-                <div class="account-box hidden" id="registerBox">
-                    <h2>Create Account</h2>
-                    <input type="text" id="registerName" placeholder="Full Name" required>
-                    <input type="email" id="registerEmail" placeholder="Email" required>
-                    <input type="password" id="registerPassword" placeholder="Password" required>
-                    <button id="registerBtn">Register</button>
-                    <p>Already have an account?
-                        <a href="#" id="showLogin">Login here</a>
-                    </p>
-                </div>
-                <!-- DASHBOARD -->
-                <div class="account-box hidden" id="dashboardBox">
-                    <h2>Welcome,
-                        <span id="userName"></span>
-                    </h2>
-                    <div class="tabs">
-                        <button class="tab-btn active" data-tab="profile">Profile</button>
-                        <button class="tab-btn" data-tab="orders">My Orders</button>
-                        <button class="tab-btn" data-tab="addresses">Addresses</button>
-                    </div>
-                    <div class="tab-content" id="profileTab">
-                        <h3>Edit Profile</h3>
-                        <input type="text" id="profileName" placeholder="Full Name">
-                        <input type="email" id="profileEmail" placeholder="Email" disabled>
-                        <button id="saveProfileBtn">Save Changes</button>
-                        <button id="logoutBtn" class="logout">Logout</button>
-                    </div>
-                    <div class="tab-content hidden" id="ordersTab">
-                        <h3>My Orders</h3>
-                        <ul id="ordersList" class="orders-list"></ul>
-                    </div>
-                    <div class="tab-content hidden" id="addressesTab">
-                        <h3>Saved Addresses</h3>
-                        <ul id="addressList" class="address-list"></ul>
-                        <input type="text" id="newAddress" placeholder="Add new address">
-                        <button id="addAddressBtn">Add Address</button>
-                    </div>
-                    <div class="tab-content" id="wishlistTab">
-                        <h3>My Wishlist</h3>
-                        <div id="wishlistContainer" class="wishlist-container"></div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <footer>
-            <section class="footer-container">
-                <div class="footer-box border">
-                    <h3>Information</h3>
-                    <a href="shipping.html">Shipping</a>
-                    <br>
-                    <a href="terms.html">T & C</a>
-                    <br>
-                    <a href="contact.html">Contact Us</a>
-                </div>
-                <div class="footer-box">
-                    <h3>My Account</h3>
-                    <a href="account.html">My Account</a>
-                    <br>
-                    <a href="cart.html">Shopping cart</a>
-                </div>
-            </section>
-            <section class="footer-end">
-                <a href="https://www.facebook.com/naturesveilsa" target="_blank">
-                        <i class=" fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/naturesveilsa" target="_blank">
-                        <i class=" fa-brands fa-instagram"></i>
-                </a>
-                <p>Copyright &copy; 2025 Nature’s Veil. All rights reserved.</p>
-            </section>
-        </footer>
-        <script src="js/account.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <img
+          class="logo"
+          src="images/logo/Modern_Wordmark_Logo_for_Nature_s_Veil__Design_2_-removebg-preview.png"
+          alt="Nature's Veil Logo"
+        />
+        <div class="menu-toggle">
+          <button id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+          <ul id="mobile-dropdown-menu" class="mobile-dropdown">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="account.html" id="accountLink">My Account</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="account.html" id="accountLink">My Account</a>
+          <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- Account Section -->
+    <section class="account-page">
+      <div class="container account-container">
+        <!-- LOGIN / REGISTER -->
+        <div class="account-box hidden" id="loginBox">
+          <h2>Login</h2>
+          <input type="email" id="loginEmail" placeholder="Email" required />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+          />
+          <button id="loginBtn">Login</button>
+          <p>
+            Don’t have an account?
+            <a href="#" id="showRegister">Register here</a>
+          </p>
+        </div>
+        <div class="account-box hidden" id="registerBox">
+          <h2>Create Account</h2>
+          <input
+            type="text"
+            id="registerName"
+            placeholder="Full Name"
+            required
+          />
+          <input type="email" id="registerEmail" placeholder="Email" required />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Password"
+            required
+          />
+          <button id="registerBtn">Register</button>
+          <p>
+            Already have an account?
+            <a href="#" id="showLogin">Login here</a>
+          </p>
+        </div>
+        <!-- DASHBOARD -->
+        <div class="account-box hidden" id="dashboardBox">
+          <h2>
+            Welcome,
+            <span id="userName"></span>
+          </h2>
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="profile">Profile</button>
+            <button class="tab-btn" data-tab="orders">My Orders</button>
+            <button class="tab-btn" data-tab="addresses">Addresses</button>
+          </div>
+          <div class="tab-content" id="profileTab">
+            <h3>Edit Profile</h3>
+            <input type="text" id="profileName" placeholder="Full Name" />
+            <input
+              type="email"
+              id="profileEmail"
+              placeholder="Email"
+              disabled
+            />
+            <button id="saveProfileBtn">Save Changes</button>
+            <button id="logoutBtn" class="logout">Logout</button>
+          </div>
+          <div class="tab-content hidden" id="ordersTab">
+            <h3>My Orders</h3>
+            <ul id="ordersList" class="orders-list"></ul>
+          </div>
+          <div class="tab-content hidden" id="addressesTab">
+            <h3>Saved Addresses</h3>
+            <ul id="addressList" class="address-list"></ul>
+            <input type="text" id="newAddress" placeholder="Add new address" />
+            <button id="addAddressBtn">Add Address</button>
+          </div>
+          <div class="tab-content" id="wishlistTab">
+            <h3>My Wishlist</h3>
+            <div id="wishlistContainer" class="wishlist-container"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <section class="footer-container">
+        <div class="footer-box border">
+          <h3>Information</h3>
+          <a href="shipping.html">Shipping</a>
+          <br />
+          <a href="terms.html">T & C</a>
+          <br />
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-box">
+          <h3>My Account</h3>
+          <a href="account.html">My Account</a>
+          <br />
+          <a href="cart.html">Shopping cart</a>
+        </div>
+      </section>
+      <section class="footer-end">
+        <div>
+          <a href="https://www.facebook.com/naturesveilsa" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/naturesveilsa" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <div>
+          <p>Copyright &copy; 2025 Nature’s Veil. All rights reserved.</p>
+        </div>
+      </section>
+    </footer>
+    <script src="js/account.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/mobile-nav.js"></script>
+  </body>
 </html>
