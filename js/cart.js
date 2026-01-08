@@ -1,30 +1,47 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const cartTableBody = document.getElementById('cartItems');
-  const totalAmountEl = document.getElementById('totalAmount');
+document.addEventListener("DOMContentLoaded", () => {
+  const cartKey = "cart";
+  const cartTableBody = document.getElementById("cartItems");
+  const totalAmountEl = document.getElementById("totalAmount");
 
-  // Make sure elements exist
   if (!cartTableBody || !totalAmountEl) return;
 
-  function renderCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cartTableBody.innerHTML = '';
+  function getCart() {
+    try {
+      return JSON.parse(localStorage.getItem(cartKey)) || [];
+    } catch {
+      return [];
+    }
+  }
 
-    if(cart.length === 0){
-      cartTableBody.innerHTML = `<tr><td colspan="5">Your cart is empty</td></tr>`;
-      totalAmountEl.textContent = 'R0.00';
+  function saveCart(cart) {
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+    window.dispatchEvent(new Event("cartUpdated"));
+  }
+
+  function renderCart() {
+    const cart = getCart();
+    cartTableBody.innerHTML = "";
+
+    if (cart.length === 0) {
+      cartTableBody.innerHTML =
+        `<tr><td colspan="5">Your cart is empty</td></tr>`;
+      totalAmountEl.textContent = "R0.00";
+      saveCart([]); // ensures navbar updates to 0
       return;
     }
 
-    cart.forEach((item, index) => {
+    cart.forEach((item) => {
       const price = parseFloat(item.price) || 0;
       const qty = parseInt(item.qty) || 0;
       const subtotal = price * qty;
 
-      const row = document.createElement('tr');
+      const row = document.createElement("tr");
       row.innerHTML = `
         <td>${item.name}</td>
         <td>R${price.toFixed(2)}</td>
-        <td><input type="number" class="quantity" value="${qty}" min="1"></td>
+        <td>
+          <input type="number" class="quantity" value="${qty}" min="1">
+        </td>
         <td class="subtotal">R${subtotal.toFixed(2)}</td>
         <td><button class="remove-btn">X</button></td>
       `;
@@ -36,52 +53,48 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateTotals() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  let subtotal = 0;
-  cart.forEach(item => {
-    const price = parseFloat(item.price) || 0;
-    const qty = parseInt(item.qty) || 0;
-    subtotal += price * qty;
-  });
+    const cart = getCart();
+    let subtotal = 0;
 
-  // Delivery fee logic — R83, free for orders ≥ R6000
-  let deliveryFee = subtotal >= 6000 ? 0 : 83;
-  let total = subtotal + deliveryFee;
+    cart.forEach(item => {
+      subtotal += item.price * item.qty;
+    });
 
-  // Update totals display
-  const totalAmountEl = document.getElementById('totalAmount');
-  if (totalAmountEl) {
+    const deliveryFee = subtotal >= 6000 ? 0 : 83;
+    const total = subtotal + deliveryFee;
+
     totalAmountEl.innerHTML = `
       <div>Subtotal: R${subtotal.toFixed(2)}</div>
-      <div>Delivery: ${deliveryFee === 0 ? '<span style="color:green;">Free</span>' : 'R' + deliveryFee.toFixed(2)}</div>
+      <div>Delivery: ${
+        deliveryFee === 0
+          ? '<span style="color:green;">Free</span>'
+          : 'R' + deliveryFee.toFixed(2)
+      }</div>
       <hr>
       <strong>Total: R${total.toFixed(2)}</strong>
     `;
+
+    localStorage.setItem("deliveryFee", deliveryFee);
   }
 
-  // Store delivery fee for checkout
-  localStorage.setItem('deliveryFee', deliveryFee);
-}
-
-
   function attachEvents() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = getCart();
 
     // Quantity change
-    document.querySelectorAll('.quantity').forEach((input,index)=>{
-      input.addEventListener('change', ()=>{
-        if(input.value<1) input.value=1;
+    document.querySelectorAll(".quantity").forEach((input, index) => {
+      input.addEventListener("change", () => {
+        if (input.value < 1) input.value = 1;
         cart[index].qty = parseInt(input.value);
-        localStorage.setItem('cart', JSON.stringify(cart));
+        saveCart(cart);
         renderCart();
       });
     });
 
-    // Remove button
-    document.querySelectorAll('.remove-btn').forEach((btn,index)=>{
-      btn.addEventListener('click', ()=>{
-        cart.splice(index,1);
-        localStorage.setItem('cart', JSON.stringify(cart));
+    // Remove item
+    document.querySelectorAll(".remove-btn").forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        cart.splice(index, 1);
+        saveCart(cart);
         renderCart();
       });
     });

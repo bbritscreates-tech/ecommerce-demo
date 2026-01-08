@@ -89,8 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("orders", JSON.stringify(orderList));
 
       // Clear cart after successful checkout
-      localStorage.removeItem("cart");
-      localStorage.removeItem("deliveryFee");
+      localStorage.setItem("cart", JSON.stringify([]));
+localStorage.removeItem("deliveryFee");
+window.dispatchEvent(new Event("cartUpdated"));
+
 
       // Confirmation message
       alert("✅ Your order has been placed successfully!");
