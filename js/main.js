@@ -1,22 +1,20 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-  const accountLink = document.getElementById('accountLink');
-  if (!accountLink) return;
+  /* ---------------- ACCOUNT LINK STATE ---------------- */
+  const accountLinks = document.querySelectorAll('#accountLink');
+  const user = JSON.parse(localStorage.getItem('loggedInUser'));
 
-  accountLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  if (user) {
+    accountLinks.forEach(link => {
+      link.textContent = 'My Account';
+      link.href = 'account.html';
+    });
+  }
 
-    if (loggedInUser) {
-      // User is logged in → go to dashboard view
-      window.location.href = '../account.html?view=dashboard';
-    } else {
-      // User not logged in → go to login/register
-      window.location.href = '../account.html?view=login';
-    }
-  });
+  /* ---------------- CART COUNT ---------------- */
+  updateCartCount();
 });
 
+/* ---------------- WISHLIST ---------------- */
 document.addEventListener("DOMContentLoaded", renderWishlist);
 window.addEventListener("wishlistUpdated", renderWishlist);
 
@@ -48,25 +46,21 @@ function renderWishlist() {
       let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
       wishlist = wishlist.filter(item => item.id !== id);
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-      // Notify all pages
       window.dispatchEvent(new Event("wishlistUpdated"));
     });
   });
 }
 
-
-
+/* ---------------- CART COUNT FUNCTION ---------------- */
 function updateCartCount() {
-  const count = JSON.parse(localStorage.getItem('cart') || '[]').length;
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
   const badge = document.getElementById('cartCount');
-  if (badge) badge.textContent = count;
+  if (badge) badge.textContent = cart.length;
 }
-updateCartCount();
 
-
+/* ---------------- MOBILE NAV ---------------- */
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => nav.classList.toggle('open'));
-
-
+if (toggle && nav) {
+  toggle.addEventListener('click', () => nav.classList.toggle('open'));
+}
