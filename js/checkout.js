@@ -1,24 +1,17 @@
-// checkout.js — Nature's Veil Updated Version (October 2025)
+// checkout.js — Fixed version to persist loggedInUser and update orders
 
-// Run after the page loads
 document.addEventListener("DOMContentLoaded", () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const orderList = JSON.parse(localStorage.getItem("orders")) || [];
-  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
   const checkoutForm = document.getElementById("checkoutForm");
   const cartContainer = document.getElementById("checkout-items");
   const summarySubtotal = document.getElementById("summary-subtotal");
   const summaryDelivery = document.getElementById("summary-delivery");
   const summaryTotal = document.getElementById("summary-total");
 
-  // Redirect if no cart or empty
+  // Redirect if no cart
   if (!cart.length) {
-    if (cartContainer) {
-      cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-    }
-    if (checkoutForm) {
-      checkoutForm.style.display = "none";
-    }
+    if (cartContainer) cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    if (checkoutForm) checkoutForm.style.display = "none";
     return;
   }
 
@@ -34,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (cartContainer) {
     cartContainer.innerHTML = cart
       .map(
-        (item) => `
+        item => `
         <div class="checkout-item">
           <img src="${item.image}" alt="${item.name}">
           <div class="item-info">
@@ -49,16 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
 
-  // Update totals in the summary section
+  // Update totals
   if (summarySubtotal) summarySubtotal.textContent = "R" + subtotal.toFixed(2);
   if (summaryDelivery)
     summaryDelivery.textContent =
       deliveryFee === 0 ? "Free" : "R" + deliveryFee.toFixed(2);
   if (summaryTotal) summaryTotal.textContent = "R" + total.toFixed(2);
 
-  // Handle checkout form submission
+  // Checkout form submission
   if (checkoutForm) {
-    checkoutForm.addEventListener("submit", (e) => {
+    checkoutForm.addEventListener("submit", e => {
       e.preventDefault();
 
       const address = document.getElementById("address").value.trim();
@@ -71,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Create new order object
+      // Create order object
       const newOrder = {
         id: Date.now(),
         date: new Date().toLocaleString(),
@@ -81,26 +74,46 @@ document.addEventListener("DOMContentLoaded", () => {
         total: total.toFixed(2),
         address,
         paymentMethod,
-        status: "Processing",
+        status: "Processing"
       };
 
-      // Save to localStorage
-      orderList.push(newOrder);
-      localStorage.setItem("orders", JSON.stringify(orderList));
+      // Update users array and loggedInUser
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+      let currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+      if (!currentUser) {
+        alert("Error: No logged-in user.");
+        return;
+      }
 
-      // Clear cart after successful checkout
-      localStorage.setItem("cart", JSON.stringify([]));
-localStorage.removeItem("deliveryFee");
-window.dispatchEvent(new Event("cartUpdated"));
+      // Add order to user
+      currentUser.orders = currentUser.orders || [];
+      currentUser.orders.push(newOrder);
 
+      // Add address to addresses if not already present
+      currentUser.addresses = currentUser.addresses || [];
+      if (!currentUser.addresses.includes(address)) {
+        currentUser.addresses.push(address);
+      }
 
-      // Confirmation message
+      // Persist changes
+      const userIndex = users.findIndex(u => u.email === currentUser.email);
+      if (userIndex !== -1) users[userIndex] = currentUser;
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("loggedInUser", JSON.stringify(currentUser));
+
+      // Clear cart
+      localStorage.removeItem("cart");
+      localStorage.removeItem("deliveryFee");
+
+      // Confirmation
       alert("✅ Your order has been placed successfully!");
-      window.location.href = "account.html?view=orders";
+
+      // Redirect to account page dashboard
+      window.location.href = "account.html?view=dashboard";
     });
   }
 
-  // Show delivery message if applicable
+  // Show delivery message
   const deliveryNotice = document.getElementById("delivery-notice");
   if (deliveryNotice) {
     if (subtotal >= 6000) {
